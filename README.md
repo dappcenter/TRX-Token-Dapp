@@ -1,2 +1,1 @@
-# RedPyramidToken
-RedPyramid Token Dapp
+# FLUX Token
