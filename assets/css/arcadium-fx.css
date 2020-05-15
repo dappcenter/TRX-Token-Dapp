@@ -1,0 +1,91 @@
+/* Arcadium FX | V 1.0.0 */
+
+/* General */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.wallpaper {
+    background: rgb(17,0,80);
+    background: linear-gradient(90deg, rgba(17,0,80,1) 10%, rgba(75,41,191,1) 50%, rgba(138,55,255,1) 90%);
+}
+
+/* Sidebar */
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper .list-group {width: 15rem;}
+#page-content-wrapper {min-width: 100vw;}
+#wrapper.toggled #sidebar-wrapper {margin-left: 0;}
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+    #sidebar-wrapper {margin-left: 0;}
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+    #wrapper.toggled #sidebar-wrapper {margin-left: -15rem;}
+}
+
+.floatingButton {
+    width: 70px;
+    height: 70px;
+    background-color: #000;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 6px 10px 0 #ff0000;
+    transition: all 0.1s ease-in-out;
+    text-align: center;
+ 
+    position: fixed;
+    right: 50px;
+    bottom: 100px;
+}
+ 
+.floatingButton:hover {
+   box-shadow: 0 6px 14px 0 #000089;
+   transform: scale(1.05);
+}
+
+
+/* Rounded Corner FX */
+/* 0,0,0,0 - top left, top right, bottom right, bottom left */
+.rcTopLeft      {border-radius: 10px  0px  0px  0px;}
+.rcTopRight     {border-radius:  0px 10px  0px  0px;}
+.rcBottomLeft   {border-radius:  0px  0px  0px 10px;}
+.rcBottomRight  {border-radius: 10px  0px 10px  0px;}
+
+.rcTop          {border-radius: 10px 10px  0px  0px;}
+.rcBottom       {border-radius:  0px  0px 10px 10px;}
+
+.rcLeft         {border-radius: 10px  0px  0px 10px;}
+.rcRight        {border-radius:  0px 10px 10px  0px;}
+
+.rcAll          {border-radius: 10px 10px 10px 10px;}
+.rcNone         {border-radius:  0px  0px  0px  0px;}
+
+/* Glass FX */
+.glassPanel {
+    background-color: rgba(0,0,0,0.65);
+}
+
+.glassButton {
+    background-color: rgba(0,0,0,0);
+    transition: background-color 0.25s;
+}
+
+.glassButton:hover {
+    background-color: rgba(95, 95, 95, 0.65);
+    color: #000;
+}

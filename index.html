@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Flux | Collateralised Token Creation on TRON">
+        <meta name="author" content="Flux Network">
+        <title>Flux | TRON</title>
+
+        <!-- Core CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/animate.min.css">
+        <link rel="stylesheet" href="assets/css/arcadium-fx.css">
+
+        <!-- FontAwesome -->
+        <script src="https://kit.fontawesome.com/f352960784.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="wallpaper">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #000;">
+                <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" width="30px" height="30px" /> Flux</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor02">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#stakingModal"><i class="fas fa-lock text-success"></i> Stake</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#unstakingModal"><i class="fas fa-unlock text-danger"></i> Unstake</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#transferModal"><i class="far fa-paper-plane text-warning"></i> Transfer</a></li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cubes text-white"></i> Trade <small class="text-danger"><i>(SOON)</i></small></a>
+                            <div class="dropdown-menu bg-dark" aria-labelledby="dropdown04">
+                                <a class="dropdown-item text-white" href="forge.html"><i class="fas fa-fire-alt text-danger"></i> Token Forge</a>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="https://twitter.com/#" target="_blank"><i class="fab fa-twitter text-white"></i> Twitter</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://github.com/#" target="_blank"><i class="fab fa-github text-white"></i> GitHub</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" target="_blank"><i class="fas fa-search-dollar text-white"></i> Contract</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+        <main role="main" id="content" class="container">
+            <br /><br /><br /><br /><br />
+            <div class="row jumbotron glassPanel border-light text-white rcAll">
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-center">
+                            <img src="assets/img/logo.png" width="100px" />
+                            <h3 class="text-white">Flux Token</h3>
+                            <p class="text-white"><i>Deflationary Proof-of-Stake on TRON</i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <div class="card glassPanel border-light text-white rcAll">
+                        <div class="card-header text-left">Your Wallet</div>
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <h3 class="text-white"><span id="myTokens">-</span></h3>
+                                    </div>
+                                            
+                                    <div class="col text-center">
+                                        <h3 class="text-white"><span id="myDividends">-</span></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                    
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <small class="text-muted">Your FLUX Tokens</small>
+                                </div>
+                                            
+                                <div class="col text-center">
+                                    <small class="text-muted">Your FLUX Earnings</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+                            
+                <div class="col-md-6 text-center">
+                    <div class="card glassPanel border-light text-white rcAll">
+                        <div class="card-header text-left">FLUX Lockup</div>
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <h3 class="text-white"><span id="myFrozen">-</span></h3>
+                                    </div>
+                                            
+                                    <div class="col text-center">
+                                        <h3 class="text-white"><span id="totalFrozen">-</span></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <small class="text-muted">Your Locked FLUX</small>
+                                </div>
+                                            
+                                <div class="col text-center">
+                                    <small class="text-muted">FLUX Locked Globally</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+            </div>
+            <br />
+
+            <div class="row">
+                <div class="col text-center">
+                    <a class="btn btn-block btn-lg btn-success rcAll text-white"  data-toggle="modal" data-target="#buyTokenModal">Buy FLUX Tokens</a>
+                </div>
+            </div>
+            <br />
+                    
+                <div class="row">
+                    <div class="col-md-6 col-sm-3 text-center">
+                        <a href="#" class="btn btn-block btn-lg btn-dark rcAll" data-toggle="modal" data-target="#stakingModal">
+                            <i class="fas fa-lock text-white"></i>  Lock FLUX Token
+                        </a>
+                        <br />
+                    </div>
+                            
+                    <div class="col-md-6 col-sm-3 text-center">
+                        <a href="#" class="btn btn-block btn-lg btn-dark rcAll" data-toggle="modal" data-target="#unstakingModal">
+                            <i class="fas fa-unlock text-white"></i>  Unlock FLUX Token
+                        </a>
+                        <br />
+                    </div>
+                            
+                    <div class="col-md-6 col-sm-3 text-center">
+                        <a href="#" class="btn btn-block btn-lg btn-dark rcAll" data-toggle="modal" data-target="#transferModal">
+                            <i class="far fa-paper-plane text-white"></i> Transfer FLUX Token
+                        </a>
+                        <br />
+                    </div>
+                            
+                    <div class="col-md-6 col-sm-3 text-center">
+                        <a href="#" class="btn btn-block btn-lg btn-dark rcAll" id="withdraw">
+                            <i class="fas fa-hand-holding-usd text-white"></i> Withdraw Earnings
+                        </a>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                            
+            <div class="row">
+                <div class="col text-left">
+                    <div class="accordion" id="accordionExample">
+                        <div class="card glassPanel rcTop">
+                            <div class="card-header" id="headingOne">
+                                <h3 class="mb-0 text-white">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <b class="text-white">What is Flux?</b>
+                                    </button>
+                                </h3>
+                            </div>
+
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <p class="text-white text-center">
+                                        Flux is a &quot;Deflationary-Proof-of-Stake&quot; Token deployed on the TRON Network.<br />
+                                        It has no owners or admins - every holder is on an equal level of privilege and power.<br />
+                                        <br />
+                                        Holders have the ability to &quot;Stake&quot; (<i>Freeze</i>) their FLUX, and earn more tokens as FLUX is used by others.<br />
+                                        The earnings from staking will vary, proportionate to tokens staked.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card glassPanel">
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <b class="text-white">What is &quot;Deflationary Proof-of-Stake&quot;?</b>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <p class="text-white text-center">
+                                        Deflationary Proof-of-Stake is the combination of two popular kinds of token.<br />
+                                        Flux is deflationary, in that 1% of every Transfer gets burned, removing it from the Total Supply.<br />
+                                        Flux is also Proof-of-Stake token, enabling holders to lock up their tokens for a period of time, to earn more tokens.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card glassPanel">
+                            <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <b class="text-white">What can I do with Flux?</b>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <p class="text-white text-center">
+                                                    At the moment, Flux is still under development. Dapps and games may be added in the future, which would feed more earnings to those who have staked Flux tokens. Bear in mind, Flux is an <i>experiment</i> - meaning at any time, just like any other project, it could suddenly become valueluess. Please ensure you are only using assets you can afford to lose.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card glassPanel rcBottom">
+                            <div class="card-header" id="headingFour">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        <b class="text-white">How Do I Get Started?</b>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <a class="btn btn-block btn-lg btn-dark btn-outline-danger rcAll" href="#buyTRXModal" data-toggle="modal" data-target="#buyTRXModal">Buy some TRX</a>
+                                            </div>
+                                            
+                                            <div class="col text-center">
+                                                <a class="btn btn-block btn-lg btn-dark btn-outline-success rcAll" href="https://tronwallet.me" target="_blank">Get a Wallet</a>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        
+                                        <div class="row">
+                                            <div class="col text-center text-white">
+                                                You&apos;ll need some Tron (TRX) and a Wallet to use Flux.<br />
+                                                <a href="https://tronwallet.me" target="_blank" class="text-success">TronWallet.Me</a> works on Windows, MacOS, Linux, iPhone and Android, and contains all you need to jump right in!<br />
+                                                <br />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+            </div>
+            <br />
+
+            <footer class="py-5 px-5 glassPanel rcAll text-white">
+                <div class="row">
+                    <div class="col text-center">
+                        <b>The Fine Print</b>
+                        <small class="d-block mb-3 text-muted">
+                            This Dapp, its connected Smart Contract, FLUX, FluxWallet.me and its dependencies &amp; productions are provided on an &quot;as-is&quot; basis, and with <b class="text-danger">no guarantee of profit or gain</b>.<br />
+                            Only invest with TRX which you can afford to lose. Using any of the aforementioned constitutes agreement with this statement.<br />
+                            Developers, Members, Participants or other affiliated parties will not be held responsible for any losses you may incur.
+                        </small>
+                    </div>
+                </div>
+            </footer>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        </main>
+            
+        
+        <div class="modal" id="buyTRXModal">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark border-white rcAll">
+                    <div class="modal-header text-white rcTop">
+                        <h4 class="modal-title text-white"><i class="fas fa-long-arrow-alt-right"></i> Buy TRX</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body text-white">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-warning rcAll" href="https://binance.com" target="_blank">
+                                            <img src="assets/img/external/binance.png" width="50px" height="50px" /><br />
+                                            <b>Binance</b><br />
+                                            <small>Global</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-success rcAll" href="https://changelly.com" target="_blank">
+                                            <img src="assets/img/external/changelly.png" width="80px" height="50px" /><br />
+                                            <b>Changelly</b><br />
+                                            <small>Global</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-light rcAll" href="https://moonpay.io" target="_blank">
+                                            <img src="assets/img/external/moonpay.png" width="50px" height="50px" /><br />
+                                            <b>Moonpay</b><br />
+                                            <small>Global</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                </div>
+                                <br />
+                                
+                                <div class="row">
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-light rcAll" href="https://bestchange.com" target="_blank">
+                                            <img src="assets/img/external/bestchange.jpg" width="50px" height="50px" /><br />
+                                            <b>Bestchange</b><br />
+                                            <small>RU, Asia</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-info rcAll" href="https://coinbase.com" target="_blank">
+                                            <img src="assets/img/external/coinbase.jpg" width="50px" height="50px" /><br />
+                                            <b>Coinbase</b><br />
+                                            <small>USA, EU, AU</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-danger rcAll" href="https://coinspot.com.au" target="_blank">
+                                            <img src="assets/img/external/coinspot.png" width="50px" height="50px" /><br />
+                                            <b>Coinspot</b><br />
+                                            <small>AU</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-4 text-center">
+                                        
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        <a class="btn btn-sm btn-block btn-outline-light rcAll" href="https://indodax.com" target="_blank">
+                                            <img src="assets/img/external/indodax.png" width="50px" height="50px" /><br />
+                                            <b>Indodax</b><br />
+                                            <small>INDO</small>
+                                        </a>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="col-md-4 text-center">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer text-white rcBottom">
+                            <button type="button" class="btn btn-block btn-danger rcAll" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        <!-- Transfer Modal -->
+        <div class="modal" id="transferModal">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark border-white rcAll">
+                    <div class="modal-header">
+                        <h4 class="modal-title text-white">Transfer FLUX</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <h5 class="text-white">Recipient</h5>
+                                    <input type="text" class="form-control bg-dark text-danger rcAll" placeholder="Recipient Address" id="transferReceiver">
+                                </div>  
+                                        
+                                <div class="col text-center">
+                                    <h5 class="text-white">Tokens</h5>
+                                    <input type="number" class="form-control bg-dark text-danger rcAll" placeholder="Tokens to Transfer" id="transferAmount">
+                                </div>
+                            </div>
+                                    
+                            <div class="row">
+                                <div class="col text-center">
+                                    <small class="text-white"><i>Please ensure the details above are correct before transferring!</i></small>
+                                </div>
+                            </div>
+                                    
+                            <div class="row">
+                                <div class="col text-center">
+                                    <a class="btn btn-block btn-sm btn-dark btn-outline-success rcAll" href id="transfer"><i class="far fa-paper-plane text-white"></i> Transfer</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-block btn-danger rcAll" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        <!-- Staking Modal -->
+        <div class="modal" id="stakingModal">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark border-white rcAll">
+                    <div class="modal-header">
+                        <h4 class="modal-title text-white">Lock FLUX Tokens</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <h5 class="text-white">Lock FLUX and Earn Rewards</h5>
+                                    <input type="number" class="form-control bg-dark text-danger rcAll" placeholder="Tokens to Stake" id="freezeAmount">
+                                    <small class="text-white">Min. Stake = 1000 Tokens</small><br />
+                                    <br />
+                                    <a class="btn btn-block btn-sm btn-dark btn-outline-success rcAll" href="" id="freeze"><i class="fas fa-lock text-white"></i> Lock FLUX</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-block btn-danger rcAll" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        <!-- Unstaking Modal -->
+        <div class="modal" id="unstakingModal">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark border-white rcAll">
+                    <div class="modal-header">
+                        <h4 class="modal-title text-white">Unstake FLUX Token</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">  
+                                <div class="col text-center">
+                                    <input type="number" class="form-control bg-dark text-danger rcAll" placeholder="Tokens to Unstake" id="unfreezeAmount">
+                                    <small class="text-white"><b class="text-danger">FEE: </b>1% of Total Unstake Amount</small><br />
+                                    <br />
+                                    <a class="btn btn-block btn-sm btn-dark btn-outline-success rcAll" href="" id="unfreeze"><i class="fas fa-lock-open text-white"></i> Unstake</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-block btn-danger rcAll" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/moment.min.js"></script>
+        
+        <script src="assets/lib/dapp.js"></script>
+    </body>
+</html>
