@@ -31,9 +31,11 @@
                         <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#transferModal"><i class="far fa-paper-plane text-warning"></i> Transfer</a></li>
                         
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cubes text-white"></i> Trade <small class="text-danger"><i>(SOON)</i></small></a>
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cubes text-info"></i> Trade <small class="text-danger"><i>(SOON)</i></small></a>
                             <div class="dropdown-menu bg-dark" aria-labelledby="dropdown04">
-                                <a class="dropdown-item text-white" href="forge.html"><i class="fas fa-fire-alt text-danger"></i> Token Forge</a>
+                                <a class="dropdown-item text-white" href="#"><i class="fas fa-coins text-info"></i> Exchange / DEX</a>
+                                <a class="dropdown-item text-white" href="#"><i class="fas fa-coins text-info"></i> Exchange / DEX</a>
+                                <a class="dropdown-item text-white" href="#"><i class="fas fa-coins text-info"></i> Exchange / DEX</a>
                             </div>
                         </li>
                     </ul>
@@ -55,7 +57,7 @@
                         <div class="col text-center">
                             <img src="assets/img/logo.png" width="100px" />
                             <h3 class="text-white">Flux Token</h3>
-                            <p class="text-white"><i>Deflationary Proof-of-Stake on TRON</i></p>
+                            <p class="text-white"><i>A Deflationary Proof-of-Stake Experiment</i></p>
                         </div>
                     </div>
                 </div>
@@ -64,16 +66,18 @@
             <div class="row">
                 <div class="col-md-6 text-center">
                     <div class="card glassPanel border-light text-white rcAll">
-                        <div class="card-header text-left">Your Wallet</div>
+                        <div class="card-header text-left"><i class="fas fa-wallet"></i> Your Wallet</div>
                         <div class="card-body">
                             <div class="container">
                                 <div class="row">
                                     <div class="col text-center">
                                         <h3 class="text-white"><span id="myTokens">-</span></h3>
+                                        <small class="text-muted">Your FLUX Tokens</small>
                                     </div>
                                             
                                     <div class="col text-center">
                                         <h3 class="text-white"><span id="myDividends">-</span></h3>
+                                        <small class="text-muted">Your FLUX Earnings</small>
                                     </div>
                                 </div>
                             </div>
@@ -82,11 +86,15 @@
                         <div class="card-footer">
                             <div class="row">
                                 <div class="col text-center">
-                                    <small class="text-muted">Your FLUX Tokens</small>
+                                    <a href="#" class="btn btn-block btn-md btn-primary rcAll" data-toggle="modal" data-target="#transferModal">
+                                        <i class="far fa-paper-plane text-white"></i> Transfer
+                                    </a>
                                 </div>
                                             
                                 <div class="col text-center">
-                                    <small class="text-muted">Your FLUX Earnings</small>
+                                    <a href="#" class="btn btn-block btn-md btn-info rcAll" id="withdraw">
+                                        <i class="fas fa-hand-holding-usd text-white"></i> Withdraw Earnings
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -96,16 +104,18 @@
                             
                 <div class="col-md-6 text-center">
                     <div class="card glassPanel border-light text-white rcAll">
-                        <div class="card-header text-left">FLUX Lockup</div>
+                        <div class="card-header text-left"><i class="far fa-clock"></i> FLUX Staking</div>
                         <div class="card-body">
                             <div class="container">
                                 <div class="row">
                                     <div class="col text-center">
                                         <h3 class="text-white"><span id="myStaked">-</span></h3>
+                                        <small class="text-muted">Your Staked FLUX</small>
                                     </div>
                                             
                                     <div class="col text-center">
                                         <h3 class="text-white"><span id="totalStaked">-</span></h3>
+                                        <small class="text-muted">FLUX Staked Globally</small>
                                     </div>
                                 </div>
                             </div>
@@ -113,11 +123,15 @@
                         <div class="card-footer">
                             <div class="row">
                                 <div class="col text-center">
-                                    <small class="text-muted">Your Locked FLUX</small>
+                                    <a href="#" class="btn btn-block btn-md btn-success rcAll" data-toggle="modal" data-target="#stakingModal">
+                                        <i class="fas fa-lock text-white"></i>  Stake
+                                    </a>
                                 </div>
                                             
                                 <div class="col text-center">
-                                    <small class="text-muted">FLUX Locked Globally</small>
+                                    <a href="#" class="btn btn-block btn-md btn-danger rcAll" data-toggle="modal" data-target="#unstakingModal">
+                                        <i class="fas fa-unlock text-white"></i>  Unstake
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -125,46 +139,7 @@
                     <br />
                 </div>
             </div>
-            <br />
-
-            <div class="row">
-                <div class="col text-center">
-                    <a class="btn btn-block btn-lg btn-success rcAll text-white"  data-toggle="modal" data-target="#buyTokenModal">Buy FLUX Tokens</a>
-                </div>
-            </div>
-            <br />
-                    
-                <div class="row">
-                    <div class="col-md-6 col-sm-3 text-center">
-                        <a href="#" class="btn btn-block btn-lg btn-dark rcAll" data-toggle="modal" data-target="#stakingModal">
-                            <i class="fas fa-lock text-white"></i>  Lock FLUX Token
-                        </a>
-                        <br />
-                    </div>
-                            
-                    <div class="col-md-6 col-sm-3 text-center">
-                        <a href="#" class="btn btn-block btn-lg btn-dark rcAll" data-toggle="modal" data-target="#unstakingModal">
-                            <i class="fas fa-unlock text-white"></i>  Unlock FLUX Token
-                        </a>
-                        <br />
-                    </div>
-                            
-                    <div class="col-md-6 col-sm-3 text-center">
-                        <a href="#" class="btn btn-block btn-lg btn-dark rcAll" data-toggle="modal" data-target="#transferModal">
-                            <i class="far fa-paper-plane text-white"></i> Transfer FLUX Token
-                        </a>
-                        <br />
-                    </div>
-                            
-                    <div class="col-md-6 col-sm-3 text-center">
-                        <a href="#" class="btn btn-block btn-lg btn-dark rcAll" id="withdraw">
-                            <i class="fas fa-hand-holding-usd text-white"></i> Withdraw Earnings
-                        </a>
-                        <br />
-                    </div>
-                </div>
-                <br />
-                            
+     
             <div class="row">
                 <div class="col text-left">
                     <div class="accordion" id="accordionExample">
